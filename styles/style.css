@@ -13193,6 +13193,32 @@ body.skin-3 {
 .n-issue svg path {
   fill: white;
 }
-.text-center .md-progress-circular {
+.text-center md-progress-circular {
   display: inline-block;
+}
+.ap-panel {
+  background-color: #F3F3F4;
+}
+.card {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.card .ibox {
+  margin-bottom: 0px;
+}
+.card .ibox .ibox-title {
+  cursor: pointer;
+}
+.card .ibox .ibox-title:hover {
+  background-color: #FAFAFB;
+}
+.card .ibox .ibox-title h5 {
+  color: #106CC8;
+}
+.card .ibox .ibox-content {
+  padding: 10px 10px 10px 20px;
+}
+.c-white svg path {
+  fill: white;
 }

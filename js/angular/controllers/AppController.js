@@ -10,19 +10,19 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
     };
 
 
-$scope.showAdvanced = function(ev) {
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: 'js/angular/views/new-issue-form.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-    })
-    .then(function(answer) {
-      $scope.alert = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.alert = 'You cancelled the dialog.';
-    });
-  };
+    $scope.showAdvanced = function(ev) {
+        $mdDialog.show({
+                // controller: DialogController,
+                templateUrl: 'js/angular/views/new-issue-form.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+            })
+            .then(function(answer) {
+                $scope.alert = 'You said the information was "' + answer + '".';
+            }, function() {
+                $scope.alert = 'You cancelled the dialog.';
+            });
+    };
 
     var tabs = [{
             title: 'One',
