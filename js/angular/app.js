@@ -55,3 +55,13 @@ app.config(function($mdIconProvider, $mdThemingProvider) {
     $mdThemingProvider.theme('modalTool')
         .primaryPalette('nViolet');
 });
+
+
+/* Ticket
+title
+description
+type - bug or feature
+screenshots
+assignee
+priority
+*/

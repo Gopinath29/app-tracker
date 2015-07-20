@@ -1,8 +1,8 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="New Ticket">
     <form>
         <md-toolbar md-theme="modalTool">
             <div class="md-toolbar-tools">
-                <h2>Mango (Fruit)</h2>
+                <h2>New Ticket</h2>
                 <span flex></span>
                 <md-button class="md-icon-button">
                     <md-icon md-svg-src="styles/svg/cross.svg" class="c-white" aria-label="Close dialog"></md-icon>
@@ -14,39 +14,42 @@
                 <md-content layout-padding="">
                     <form name="userForm">
                         <div layout="" layout-sm="column">
+                            <md-input-container flex="">
+                                <label>Ticket Title</label>
+                                <input ng-model="ticket.title" md-maxlength="50">
+                            </md-input-container>
                         </div>
                         <div layout="" layout-sm="column">
                             <md-input-container flex="">
-                                <label>First name</label>
-                                <input ng-model="user.firstName">
+                                <md-radio-group ng-init="ticket.type = 'Bug'" ng-model="ticket.type" >
+                                    <md-radio-button ng-value="Bug">Bug</md-radio-button>
+                                    <md-radio-button ng-value="Feature">Feature</md-radio-button>
+                                </md-radio-group>
                             </md-input-container>
                             <md-input-container flex="">
-                                <label>Last Name</label>
-                                <input ng-model="theMax">
+                                <md-menu>
+                                    <md-button aria-label="Open demo menu" class="md-primary md-button md-modalTool-theme" ng-click="$mdOpenMenu()">
+                                        Priority : {{ticket.priority}}
+                                    </md-button>
+                                    <md-menu-content width="6">
+                                        <md-menu-item ng-repeat="item in ['P1', 'P2', 'P3']">
+                                            <md-button>
+                                                {{item}}
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
                             </md-input-container>
                         </div>
-                        <md-input-container flex="">
-                            <label>Description</label>
-                            <textarea ng-model="user.description" columns="1" md-maxlength="150"></textarea>
-                        </md-input-container>
                         <div layout="" layout-sm="column">
                             <md-input-container flex="">
-                                <label>City</label>
-                                <input ng-model="user.city">
-                            </md-input-container>
-                            <md-input-container flex="">
-                                <label>State</label>
-                                <input ng-model="user.state">
-                            </md-input-container>
-                            <md-input-container flex="">
-                                <label>Postal Code</label>
-                                <input ng-model="user.postalCode">
+                                <label>Description</label>
+                                <textarea ng-model="ticket.description" columns="1" md-maxlength="1000"></textarea>
                             </md-input-container>
                         </div>
-                        <md-input-container flex="">
-                            <label>Biography</label>
-                            <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
-                        </md-input-container>
+                        <div style="overflow: hidden;min-width: 450px;">
+                        {{ticket | json}}
+                        </div>
                     </form>
                 </md-content>
             </div>
