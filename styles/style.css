@@ -13213,7 +13213,7 @@ body.skin-3 {
 .card .ibox .ibox-title:hover {
   background-color: #FAFAFB;
 }
-.card .ibox .ibox-title h5 {
+.card .ibox .ibox-title h4 {
   color: #106CC8;
 }
 .card .ibox .ibox-content {
@@ -13221,4 +13221,30 @@ body.skin-3 {
 }
 .c-white svg path {
   fill: white;
+}
+span.input-icon {
+  position: relative;
+  vertical-align: middle;
+}
+span.input-icon input {
+  padding-left: 24px;
+  padding-right: 6px;
+}
+span.input-icon i {
+  padding: 0 3px;
+  z-index: 2;
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 3px;
+  line-height: 30px;
+  display: inline-block;
+  color: #909090;
+  font-size: 16px;
+  text-align: center;
+}
+.search-bar {
+  background-color: #FFF;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
