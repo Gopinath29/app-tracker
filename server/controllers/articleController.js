@@ -1,4 +1,4 @@
-var Article = require('../models/article');
+/*var Article = require('../models/article');
 var _ = require('underscore');
 
 exports.create = function(req, res) {
@@ -55,3 +55,4 @@ exports.getArticleById = function(req, res, next, id) {
 
     })
 };
+*/

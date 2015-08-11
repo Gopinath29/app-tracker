@@ -34,8 +34,14 @@ var validateUniqueEmail = function(value, callback) {
  * User Schema
  */
 
+
+ 
 var UserSchema = new Schema({
-    name: {
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname : {
         type: String,
         required: true
     },
@@ -45,13 +51,18 @@ var UserSchema = new Schema({
         unique: true,
         match: [/\S+@\S+\.\S+/, 'Please enter a valid email']
     },
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     roles: {
         type: Array,
-        default: ['user']
+        default: ['admin']
     },
     hashed_password: {
         type: String,
-        validate: [validatePresenceOf, 'Password cannot be blank']
+        validate: [validatePresenceOf, 'Password cannot be blank'],
+        select: false
     },
     provider: {
         type: String,

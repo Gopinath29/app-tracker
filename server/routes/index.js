@@ -1,8 +1,10 @@
  var auth = require('../../config/authorization');
+ var scr = require('./../models/screenshot.js');
+ var tick = require('./../models/ticket.js');
 
  module.exports = function(app) {
 
-
+/*
      var article = require('../controllers/articleController');
      app.route('/api/articles')
          .post(auth.requiresLogin,article.create)
@@ -10,7 +12,7 @@
      app.route('/api/articles/:articleId')
          .get(article.show)
          .put(article.update);
-     app.param('articleId', article.getArticleById);
+     app.param('articleId', article.getArticleById);*/
 
      var user = require('../controllers/userController');
 

@@ -3,7 +3,15 @@
 /**
  * Module dependencies.
  */
-var User = require('../models/user');
+
+
+
+ var mongoose = require('mongoose'),
+ User = mongoose.model('User'),
+ Ticket = mongoose.model('Ticket'),
+ ScreenShot = mongoose.model('ScreenShot'),
+ Discussion = mongoose.model('Discussion');
+console.log(mongoose.models);
 var passport = require('passport');
 
 exports.create = function(req, res) {
