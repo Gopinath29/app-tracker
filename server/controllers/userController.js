@@ -6,13 +6,9 @@
 
 
 
- var mongoose = require('mongoose'),
- User = mongoose.model('User'),
- Ticket = mongoose.model('Ticket'),
- ScreenShot = mongoose.model('ScreenShot'),
- Discussion = mongoose.model('Discussion');
-console.log(mongoose.models);
-var passport = require('passport');
+var mongoose = require('mongoose'),
+    User = mongoose.model('User'),
+    passport = require('passport');
 
 exports.create = function(req, res) {
     var user = new User(req.body);

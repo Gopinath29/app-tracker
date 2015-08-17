@@ -10,7 +10,7 @@ var validatePriority = function(value) {
     return (value == 'p1' || value == 'p2' || value == 'p3' || value == 'p4');
 };
 
-var validateStatus = function(){
+var validateStatus = function(value){
     return (value == 'new' || value == 'opened' || value == 'closed' || value == 'resolved');
 };
 
@@ -30,9 +30,13 @@ var TicketSchema = new Schema({
      },
      priority: {
         type: String,
-        required: true,
-        validate: [validateTicketType, 'Ticket priority is not as expected']
+        required: true
+        //validate: [validateTicketType, 'Ticket priority is not as expected']
      },
+     project: {
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    },
      createdBy: {
         type: Schema.ObjectId,
         ref: 'User',
@@ -44,12 +48,12 @@ var TicketSchema = new Schema({
     },
     assignee: {
         type: Schema.ObjectId,
-        ref: 'User',
+        ref: 'User'
     },
     status: {
         type: String,
         required: true,
-        default: 'New',
+        default: 'new',
         validate: [validateStatus, 'Ticket status is not as expected']
     },
     lastModified: {
@@ -58,7 +62,7 @@ var TicketSchema = new Schema({
     },
     screenShot: {
         type: [Schema.ObjectId],
-        ref: 'Screen'
+        ref: 'ScreenShot'
     },
     discussion: {
         type: [Schema.ObjectId],

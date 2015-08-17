@@ -69,6 +69,12 @@ app.use(function(req, res, next) {
     next(); 
 });
 
+app.use(function(err, req, res, next) {
+    console.log('#################################################', err);
+    //res.locals.assets = assets;
+    next(); 
+});
+
 
 // cache=memory or swig dies in NODE_ENV=production
 app.locals.cache = 'memory';
@@ -97,6 +103,8 @@ swig.setDefaults({
 
 
 require('./server/routes/index')(app);
+require('./server/routes/ticket')(app);
+require('./server/routes/project')(app);
 
 
 /*if (app.get('env') === 'development') {

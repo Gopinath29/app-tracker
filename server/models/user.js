@@ -51,6 +51,10 @@ var UserSchema = new Schema({
         unique: true,
         match: [/\S+@\S+\.\S+/, 'Please enter a valid email']
     },
+    userImage: {
+        type: {},
+        default: {}
+    },
     isActive: {
         type: Boolean,
         default: true

@@ -1,7 +1,4 @@
- var auth = require('../../config/authorization');
- var scr = require('./../models/screenshot.js');
- var tick = require('./../models/ticket.js');
- var proj = require('./../models/project.js');
+ var ticket = require('./../models/ticket.js');
 
  module.exports = function(app) {
 
@@ -15,9 +12,15 @@
          .put(article.update);
      app.param('articleId', article.getArticleById);*/
 
-     var user = require('../controllers/userController');
+     var ticket = require('../controllers/ticketController');
 
-     app.get('/api/login', function(req, res) {
+
+      app.route('/api/ticket')
+    .post(ticket.create)
+    .get(ticket.getTickets);
+
+
+     /*app.get('/api/login', function(req, res) {
          res.render('login', {
              user: req.user
          });
@@ -30,5 +33,5 @@
          .get(auth.requiresLogin, user.session)
          .post(user.login)
          .delete(user.logout)
-
+*/
  };
